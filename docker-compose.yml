@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  clarkson:
+    build: .
+    image: clarkson:latest
+    container_name: clarkson
+    ports:
+      - "${PORT_MAPPING:-3000}:${PORT:-3000}"
+    volumes:
+      - /mnt/user/appdata/clarkson/config:/config
+      - /mnt/user/appdata/clarkson/assets:/assets
+    environment:
+      PORT: ${PORT:-3000}
+      CONFIG_PATH: /config
+      ASSETS_PATH: /assets
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-$(date +%s)}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${PORT:-3000}/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  config:
+  assets:

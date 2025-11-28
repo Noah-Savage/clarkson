@@ -1,0 +1,33 @@
+{
+  "name": "Clarkson - Vehicle Expense Tracker",
+  "short_name": "Clarkson",
+  "description": "Multi-vehicle expense and maintenance tracker with offline support",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    }
+  ]
+}
